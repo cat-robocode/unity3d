@@ -363,7 +363,7 @@ GameObject:
   - component: {fileID: 572058310}
   - component: {fileID: 572058311}
   m_Layer: 0
-  m_Name: Capsule
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -587,6 +587,7 @@ GameObject:
   m_Component:
   - component: {fileID: 781078134}
   - component: {fileID: 781078135}
+  - component: {fileID: 781078136}
   m_Layer: 0
   m_Name: LevelGenerator
   m_TagString: Untagged
@@ -616,12 +617,26 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 781078133}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 24489ca5459c4b842b96f31a1a4061df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelGeneratorScript
   cubePrefab: {fileID: 2723732871687153292, guid: e26cd3f649d7b4645bfefb2b91c2af57, type: 3}
+--- !u!114 &781078136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 781078133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 354e218496699114686cf6bb24afb3e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RandomLevelGeneratorScript
+  groundPref: {fileID: 5616334996364480650, guid: 4c596abf7de2a6a4a8a47e185cc21115, type: 3}
+  grassPref: {fileID: 5290828244455094335, guid: e13e1e12027b2b344a16183fda9db551, type: 3}
 --- !u!1 &1197395848
 GameObject:
   m_ObjectHideFlags: 0
