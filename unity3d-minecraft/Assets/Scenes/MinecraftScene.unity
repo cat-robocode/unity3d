@@ -520,7 +520,7 @@ GameObject:
   - component: {fileID: 237857343}
   - component: {fileID: 237857342}
   m_Layer: 5
-  m_Name: InventoryPanel
+  m_Name: CharInventoryPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1182,6 +1182,9 @@ MonoBehaviour:
   goCamera: {fileID: 2033827370}
   particleObject: {fileID: 5574730589755210874, guid: b1a0a5e01d6105d4d8617b55dc1ba1d8, type: 3}
   tool: {fileID: 1218033491}
+  canMove: 1
+  inventoryItems: []
+  currentChestItems: []
 --- !u!1 &602304272
 GameObject:
   m_ObjectHideFlags: 0
@@ -1317,6 +1320,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::RandomLevelGeneratorScript
   groundPref: {fileID: 5616334996364480650, guid: 4c596abf7de2a6a4a8a47e185cc21115, type: 3}
   grassPref: {fileID: 5290828244455094335, guid: e13e1e12027b2b344a16183fda9db551, type: 3}
+  chestPref: {fileID: 7978235929272643838, guid: d9efdba761d1a654a917e06e7331e75f, type: 3}
 --- !u!1 &827337998
 GameObject:
   m_ObjectHideFlags: 0
@@ -2518,6 +2522,78 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1686829642}
   m_CullTransparentMesh: 1
+--- !u!1 &1934450487
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1934450488}
+  - component: {fileID: 1934450489}
+  m_Layer: 0
+  m_Name: InventoryManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1934450488
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1934450487}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1934450489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1934450487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc299f78e117b934da1122550a9beb1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InventoryManagerScript
+  slotPref: {fileID: 5191993140287530095, guid: 9f02b345b202f4440b0a45d8b53a807f, type: 3}
+  inventoryPanel: {fileID: 0}
+  chestPanel: {fileID: 0}
+  invContent: {fileID: 0}
+  chestContent: {fileID: 0}
+  items:
+  - itemName: Pickaxe
+    id: 0
+    count: 1
+    description: Resource extraction tool.
+    isUniq: 1
+  - itemName: Sword
+    id: 1
+    count: 1
+    description: "Dealing damage tool.\t"
+    isUniq: 1
+  - itemName: Ground
+    id: 2
+    count: 1
+    description: "Nice piece of ground.\t"
+    isUniq: 0
+  - itemName: Meat
+    id: 3
+    count: 1
+    description: Restore some health.
+    isUniq: 0
+  inventorySlots: []
+  currentChestSlots: []
 --- !u!1 &1955250340
 GameObject:
   m_ObjectHideFlags: 0
@@ -2997,3 +3073,4 @@ SceneRoots:
   - {fileID: 572058309}
   - {fileID: 367375717}
   - {fileID: 1256217201}
+  - {fileID: 1934450488}

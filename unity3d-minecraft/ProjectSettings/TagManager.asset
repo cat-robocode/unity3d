@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Floor
   - Block
+  - Chest
   layers:
   - Default
   - TransparentFX

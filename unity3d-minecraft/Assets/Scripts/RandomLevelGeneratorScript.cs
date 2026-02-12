@@ -3,7 +3,7 @@ using UnityEngine;
 public class RandomLevelGeneratorScript : MonoBehaviour
 {
     [SerializeField]
-    private GameObject groundPref, grassPref;
+    private GameObject groundPref, grassPref, chestPref;
     private int baseHeight = 2,
                 maxBlocksCountY = 10,
                 chunkSize = 16,
@@ -39,6 +39,7 @@ public class RandomLevelGeneratorScript : MonoBehaviour
                         temp = Instantiate(grassPref,
                                            new Vector3(x, y, z),
                                            Quaternion.identity);
+                        CreateChest(x, height, y);
                     }
                     else
                     {
@@ -49,6 +50,15 @@ public class RandomLevelGeneratorScript : MonoBehaviour
                     temp.transform.SetParent(chunk.transform);
                 }
             }
+        }
+    }
+    private void CreateChest (int x, int y, int z)
+    {
+        int createChestChance = Random.Range(0,100);
+        if (createChestChance > 98)
+        {
+            Instantiate(chestPref, new Vector3(x,y,z), Quaternion.identity);
+        
         }
     }
     void Start()
